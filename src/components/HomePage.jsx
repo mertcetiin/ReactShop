@@ -1,6 +1,8 @@
 import { useFormik } from 'formik';
 import { useState } from 'react'
 import { loginSchema } from '../Schema';
+import { Link } from 'react-router-dom';
+import CreateAccont from './CreateAccont';
 
 function HomePage() {
 
@@ -24,25 +26,31 @@ function HomePage() {
             <header>
                 <button onClick={handleLogin}>Login</button>
             </header>
-            {isOpen ? <div>
+            {isOpen ? <div className='form-div'>
                 <form onSubmit={handleSubmit}>
-                    <label>Email</label>
-                    <input type='email'
-                        id='email'
-                        onChange={handleChange}
-                        value={values.email}
-                        className={errors.email ? 'input-error' : ''}
-                    />
-                    {errors.email && <p>{errors.email}</p>}
-                    <label>Password</label>
-                    <input type='password'
-                        id='password'
-                        onChange={handleChange}
-                        value={values.password}
-                        className={errors.password ? 'input-error' : ''}
-                    />
-                    {errors.password && <p>{errors.password}</p>}
-                    <button type='submit'>Login</button>
+
+                    <div className='input-div'>
+                        <label>Email</label>
+                        <input type='email'
+                            id='email'
+                            onChange={handleChange}
+                            value={values.email}
+                            className={errors.email ? 'input-error' : ''}
+                        />
+                    </div>
+                    {errors.email && <p className='error'>{errors.email}</p>}
+                    <div className='input-div'>
+                        <label>Password</label>
+                        <input type='password'
+                            id='password'
+                            onChange={handleChange}
+                            value={values.password}
+                            className={errors.password ? 'input-error' : ''}
+                        />
+                    </div>
+                    {errors.password && <p className='error'>{errors.password}</p>}
+                    <button className='login-btn' type='submit'>Login</button>
+                    <Link to='/createaccont'>Create Accont</Link>
                 </form></div> : ''}
 
             <div className="container">
