@@ -2,25 +2,33 @@ import { useFormik } from 'formik';
 import { useState } from 'react'
 import { loginSchema } from '../Schema';
 import { Link } from 'react-router-dom';
-import CreateAccont from './CreateAccont';
+import { useNavigate } from 'react-router-dom';
 
 function HomePage() {
 
+    const onSubmit = async (values, actions) => {
+        await new Promise((resolve) => {
+            setTimeout(resolve, 1000)
+        })
+        actions.resetForm();
+        navigate(handleLogin())
+    }
 
-    const { values, errors, handleChange, handleSubmit } = useFormik({
+    const { values, errors, handleChange, handleSubmit, isSubmitting } = useFormik({
         initialValues: {
             email: '',
             password: '',
         },
-        validationSchema: loginSchema
+        validationSchema: loginSchema, onSubmit
     })
 
     const [isOpen, setIsOpen] = useState(false);
 
     const handleLogin = () => {
-        setIsOpen(true)
+        setIsOpen((prevLogin) => !prevLogin)
     }
 
+    const navigate = useNavigate();
 
     return (
         <div>
@@ -50,9 +58,12 @@ function HomePage() {
                         />
                     </div>
                     {errors.password && <p className='error'>{errors.password}</p>}
-                    <button className='login-btn' type='submit'>Login</button>
+
+                    <button className='login-btn' type='submit' disabled={isSubmitting}>Login</button>
+
                     <Link to='/createaccont'>Create Accont</Link>
-                </form></div> : ''}
+                </form></div>
+                : ''}
 
             <div className="container">
                 <h1>Mert Çetin</h1>
