@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    margin-top: -400px;
 }
 
 form {
@@ -76,4 +77,14 @@ form label {
     color: #fc8181;
     font-size: 12px;
     text-align: left;
+}
+
+.container {
+    display: flex;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    gap: 5px;
 }

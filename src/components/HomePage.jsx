@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { loginSchema } from '../Schema';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { Products } from './Products';
+
 
 function HomePage() {
 
@@ -35,6 +37,17 @@ function HomePage() {
             <header>
                 <button onClick={handleLogin}>Login</button>
             </header>
+
+            <div className="container">
+                {Products.map((item) => (
+                    <div className='products-div' key={item.id}>
+                        <img src={item.src} />
+                        <h2>{item.name}</h2>
+                        <p>{item.price}</p>
+                    </div>
+                ))}
+            </div>
+
             {isOpen ? <div className='form-div'>
                 <form onSubmit={handleSubmit}>
 
@@ -62,12 +75,7 @@ function HomePage() {
                     <button className='login-btn' type='submit' disabled={isSubmitting}>Login</button>
 
                     <Link to='/createaccont'>Create Accont</Link>
-                </form></div>
-                : ''}
-
-            <div className="container">
-                <h1>Mert Çetin</h1>
-            </div>
+                </form></div> : ''}
         </div>
     )
 }
