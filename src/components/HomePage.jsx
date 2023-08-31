@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Products } from './Products';
 import LoginIcon from '@mui/icons-material/Login';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
 function HomePage() {
@@ -33,11 +34,18 @@ function HomePage() {
 
     const navigate = useNavigate();
 
+
+    const [count, setCount] = useState(0);
+
+    const handleCount = () => {
+        setCount((prev) => prev + 1)
+    }
+
     return (
         <div>
             <header>
-
                 <button onClick={handleLogin}><LoginIcon />  Login</button>
+                <button><ShoppingCartIcon /> {count}</button>
             </header>
 
             <div className="container">
@@ -46,6 +54,7 @@ function HomePage() {
                         <img src={item.src} />
                         <h2>{item.name}</h2>
                         <p>{item.price}</p>
+                        <button onClick={handleCount}>Add</button>
                     </div>
                 ))}
             </div>
