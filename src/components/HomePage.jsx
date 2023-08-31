@@ -8,8 +8,7 @@ import LoginIcon from '@mui/icons-material/Login';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
-
-function HomePage() {
+function HomePage({ totalItemCount, handleCount }) {
 
     const onSubmit = async (values, actions) => {
         await new Promise((resolve) => {
@@ -36,17 +35,11 @@ function HomePage() {
     const navigate = useNavigate();
 
 
-    const [count, setCount] = useState(0);
-
-    const handleCount = () => {
-        setCount((prev) => prev + 1)
-    }
-
     return (
         <div>
             <header>
                 <button onClick={handleLogin}><LoginIcon />  Login</button>
-                <button count={count} onClick={() => navigate('/mybasket')}><ShoppingCartIcon /> {count}</button>
+                <button onClick={() => navigate('/mybasket')}><ShoppingCartIcon /> {totalItemCount}</button>
             </header>
 
             <div className="container">
@@ -55,7 +48,7 @@ function HomePage() {
                         <img src={item.src} />
                         <h2>{item.name}</h2>
                         <p>{item.price}</p>
-                        <button onClick={handleCount}>Add</button>
+                        <button onClick={() => handleCount(item.id)}>Add</button>
                     </div>
                 ))}
             </div>
@@ -92,4 +85,4 @@ function HomePage() {
     )
 }
 
-export default HomePage
+export default HomePage;

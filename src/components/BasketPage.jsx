@@ -1,16 +1,18 @@
 import React from 'react'
-import { Products } from './Products';
 import { Link } from 'react-router-dom';
 
 
-function BasketPage() {
+
+function BasketPage({ products }) {
+
+
     return (
         <div>
-            <h3>Sepetinizde hiç ürün Bulunmamaktadır</h3>
+            <p>Sepetinizde hiç ürün Bulunmamaktadır</p>
 
-            {Products.map((item) => (
+            {products.map((item) => (
                 <div key={item.id}>
-                    <h2>{item.name} x</h2>
+                    <h2>{item.name} x {item.count || 0}</h2>
                 </div>
             ))}
 
@@ -19,4 +21,4 @@ function BasketPage() {
     )
 }
 
-export default BasketPage
+export default BasketPage;
