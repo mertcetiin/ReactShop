@@ -8,6 +8,7 @@ import LoginIcon from '@mui/icons-material/Login';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
+
 function HomePage() {
 
     const onSubmit = async (values, actions) => {
@@ -45,7 +46,7 @@ function HomePage() {
         <div>
             <header>
                 <button onClick={handleLogin}><LoginIcon />  Login</button>
-                <button><ShoppingCartIcon /> {count}</button>
+                <button count={count} onClick={() => navigate('/mybasket')}><ShoppingCartIcon /> {count}</button>
             </header>
 
             <div className="container">
