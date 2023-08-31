@@ -4,6 +4,7 @@ import { loginSchema } from '../Schema';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { Products } from './Products';
+import LoginIcon from '@mui/icons-material/Login';
 
 
 function HomePage() {
@@ -35,12 +36,13 @@ function HomePage() {
     return (
         <div>
             <header>
-                <button onClick={handleLogin}>Login</button>
+
+                <button onClick={handleLogin}><LoginIcon />  Login</button>
             </header>
 
             <div className="container">
                 {Products.map((item) => (
-                    <div className='products-div' key={item.id}>
+                    <div className='row' key={item.id}>
                         <img src={item.src} />
                         <h2>{item.name}</h2>
                         <p>{item.price}</p>
