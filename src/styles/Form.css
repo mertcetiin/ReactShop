@@ -42,27 +42,26 @@ input:focus {
 form label {
     font-size: 16px;
     font-weight: bold;
-    color: black;
+    color: white;
 }
 
 .login-btn {
     width: 100%;
     padding: 8px 8px;
     margin: 16px 0px;
-    background-color: green;
     color: white;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
+    background-color: green;
 }
 
 .create-btn {
     width: 100%;
     padding: 8px 8px;
     margin: 16px 0px;
-    background-color: rgb(0, 87, 0);
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -79,4 +78,13 @@ form label {
     color: #fc8181;
     font-size: 12px;
     text-align: left;
+}
+
+.clear-icon {
+    float: right;
+    margin-top: -50px;
+    color: red;
+    background-color: none;
+    border: none;
+    background: none;
 }

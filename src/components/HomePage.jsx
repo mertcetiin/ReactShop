@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { Products } from './Products';
 import LoginIcon from '@mui/icons-material/Login';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ClearIcon from '@mui/icons-material/Clear';
 import '../styles/HomePage.css'
 import '../styles/Form.css'
 
@@ -57,6 +58,7 @@ function HomePage({ totalItemCount, handleCount }) {
 
             {isOpen ? <div className='form-div'>
                 <form onSubmit={handleSubmit}>
+                    <button onClick={handleLogin} className='clear-icon'><ClearIcon /></button>
 
                     <div className='input-div'>
                         <label>Email</label>
@@ -81,7 +83,7 @@ function HomePage({ totalItemCount, handleCount }) {
 
                     <button className='login-btn' type='submit' disabled={isSubmitting}>Login</button>
 
-                    <Link to='/createaccont'>Create Accont</Link>
+                    <Link className='create-btn' to='/createaccont'>Create Accont</Link>
                 </form></div> : ''}
         </div>
     )
