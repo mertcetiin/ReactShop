@@ -15,6 +15,7 @@ function BasketPage({ products }) {
                             <h2>{item.name} - {item.count || 0}</h2>
                         </div>
                     ))}
+                    <p>Toplam Tutar: </p>
                 </div>
             ) : (
                 <p className='basket-p'><ShoppingCartIcon /> You have no items in your basket!</p>

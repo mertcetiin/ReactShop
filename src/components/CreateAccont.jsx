@@ -1,8 +1,15 @@
 import React from 'react'
 import HomePage from './HomePage';
+import { createSchema } from '../Schema';
+import { useFormik } from 'formik';
 
 
 function CreateAccont() {
+
+    const { values, errors, handleSubmit, handleChange } = useFormik({
+
+    })
+
     return (
         <div className='form-div'>
             <form>
@@ -18,8 +25,9 @@ function CreateAccont() {
                     <label>Confirm Password</label>
                     <input />
                 </div>
-                <button onClick={<HomePage />} className='create-btn'>Create Accont</button>
+                <button className='create-btn'>Create Accont</button>
             </form>
+
         </div>
     )
 }
