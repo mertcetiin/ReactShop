@@ -4,12 +4,14 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import '../styles/BasketPage.css'
 
 
-function BasketPage({ products, totalItemPrice }) {
+function BasketPage({ products, totalItemPrice, basketClear }) {
 
     const totalPrice = totalItemPrice(products);
 
+
     return (
         <div className='basket-div'>
+            <button onClick={basketClear}>Basket Clear</button>
             {products.some(item => item.count > 0) ? (
                 <div>
                     {products.map((item) => (

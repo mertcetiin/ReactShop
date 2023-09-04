@@ -31,13 +31,17 @@ function App() {
     return totalPrice;
   }
 
+  const basketClear = () => {
+    setProducts(Products)
+  }
+
   return (
     <div className='App'>
       <Routes>
         <Route path='' element={<HomePage handleCount={handleCount} totalItemCount={totalItemCount} />} />
         <Route path='/login' element={<Login />} />
         <Route path='/createaccont' element={<CreateAccont />} />
-        <Route path='/mybasket' element={<BasketPage products={products} count={count} totalItemPrice={totalItemPrice} />} />
+        <Route path='/mybasket' element={<BasketPage products={products} count={count} totalItemPrice={totalItemPrice} basketClear={basketClear} />} />
       </Routes>
     </div>
   )
