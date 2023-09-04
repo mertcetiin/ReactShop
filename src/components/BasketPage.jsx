@@ -4,7 +4,9 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import '../styles/BasketPage.css'
 
 
-function BasketPage({ products }) {
+function BasketPage({ products, totalItemPrice }) {
+
+    const totalPrice = totalItemPrice(products);
 
     return (
         <div className='basket-div'>
@@ -15,7 +17,7 @@ function BasketPage({ products }) {
                             <h2>{item.count > 0 ? `${item.name} - ${item.count}` : ''}</h2>
                         </div>
                     ))}
-                    <p>Toplam Tutar: </p>
+                    <p>Toplam Tutar: {totalPrice.toLocaleString('tr-TR')} TL</p>
                 </div>
             ) : (
                 <p className='basket-p'><ShoppingCartIcon /> You have no items in your basket!</p>

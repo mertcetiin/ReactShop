@@ -50,7 +50,7 @@ function HomePage({ totalItemCount, handleCount }) {
                     <div className='row' key={item.id}>
                         <img src={item.src} />
                         <h2>{item.name}</h2>
-                        <p>{item.price}</p>
+                        <p>{item.price.toLocaleString('tr-TR')} TL</p>
                         <button onClick={() => handleCount(item.id)}>Add</button>
                     </div>
                 ))}

@@ -23,13 +23,21 @@ function App() {
 
   const totalItemCount = products.reduce((total, product) => total + (product.count || 0), 0);
 
+  const totalItemPrice = (products) => {
+    let totalPrice = 0;
+    products.forEach((product) => {
+      totalPrice += (product.count || 0) * parseFloat(product.price)
+    });
+    return totalPrice;
+  }
+
   return (
     <div className='App'>
       <Routes>
         <Route path='' element={<HomePage handleCount={handleCount} totalItemCount={totalItemCount} />} />
         <Route path='/login' element={<Login />} />
         <Route path='/createaccont' element={<CreateAccont />} />
-        <Route path='/mybasket' element={<BasketPage products={products} count={count} />} />
+        <Route path='/mybasket' element={<BasketPage products={products} count={count} totalItemPrice={totalItemPrice} />} />
       </Routes>
     </div>
   )

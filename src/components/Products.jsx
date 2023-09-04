@@ -11,36 +11,36 @@ export const Products = ([
         id: 1,
         name: 'Laptop',
         src: Laptop,
-        price: '10.000 TL'
+        price: 10000,
     },
     {
         id: 2,
         name: 'Phone',
         src: Phone,
-        price: '20.000 TL'
+        price: 20000
     },
     {
         id: 3,
         name: 'Watch',
         src: Watch,
-        price: '5.000 TL'
+        price: 5000
     },
     {
         id: 4,
         name: 'Nintendo',
         src: Nintendo,
-        price: '8.000 TL'
+        price: 8000
     },
     {
         id: 5,
         name: 'Mouse',
         src: Mouse,
-        price: '1.000 TL'
+        price: 1000
     },
     {
         id: 6,
         name: 'Keyboard',
         src: Keyboard,
-        price: '2.000 TL'
+        price: 2000
     },
 ])
