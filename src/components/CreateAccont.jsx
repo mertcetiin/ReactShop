@@ -2,11 +2,17 @@ import React from 'react'
 import HomePage from './HomePage';
 import { createSchema } from '../Schema';
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom';
 
 
 function CreateAccont() {
 
+    const navigate = useNavigate();
+
     const { values, errors, handleSubmit, handleChange } = useFormik({
+        onSubmit: () => {
+            navigate('')
+        }
 
     })
 
@@ -25,7 +31,7 @@ function CreateAccont() {
                     <label>Confirm Password</label>
                     <input />
                 </div>
-                <button className='create-btn'>Create Accont</button>
+                <button type='submit' className='create-btn'>Create Accont</button>
             </form>
 
         </div>
