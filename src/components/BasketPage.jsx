@@ -6,19 +6,15 @@ import '../styles/BasketPage.css'
 
 function BasketPage({ products }) {
 
-    // const totalPrice = products.reduce((total, price) => total + price)
-
-
     return (
         <div className='basket-div'>
             {products.some(item => item.count > 0) ? (
                 <div>
                     {products.map((item) => (
                         <div key={item.id}>
-                            <h2>{item.name} - {item.count || 0}</h2>
+                            <h2>{item.count > 0 ? `${item.name} - ${item.count}` : ''}</h2>
                         </div>
                     ))}
-                    {/* <p>Toplam Tutar: {totalPrice}</p>  */}
                     <p>Toplam Tutar: </p>
                 </div>
             ) : (
