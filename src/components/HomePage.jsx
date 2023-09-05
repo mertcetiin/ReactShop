@@ -10,6 +10,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import '../styles/HomePage.css'
 import '../styles/Form.css'
+import '../styles/LikePage.css'
 
 
 function HomePage({ totalItemCount, handleCount }) {
@@ -43,7 +44,7 @@ function HomePage({ totalItemCount, handleCount }) {
         <div>
             <header>
                 <button onClick={handleLogin}><LoginIcon />  Login</button>
-                <button onClick={() => navigate('/like')}><FavoriteBorderIcon /></button>
+                <button onClick={() => navigate('/like')} className='likeIcon'><FavoriteBorderIcon /></button>
                 <button onClick={() => navigate('/mybasket')}><ShoppingCartIcon /> {totalItemCount}</button>
             </header>
 
