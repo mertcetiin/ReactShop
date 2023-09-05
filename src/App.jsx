@@ -6,6 +6,7 @@ import CreateAccont from './components/CreateAccont'
 import BasketPage from './components/BasketPage'
 import { useState } from 'react'
 import { Products } from './components/Products'
+import LikePage from './components/LikePage'
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
         <Route path='' element={<HomePage handleCount={handleCount} totalItemCount={totalItemCount} />} />
         <Route path='/login' element={<Login />} />
         <Route path='/createaccont' element={<CreateAccont />} />
+        <Route path='like' element={<LikePage />} />
         <Route path='/mybasket' element={<BasketPage products={products} count={count} totalItemPrice={totalItemPrice} basketClear={basketClear} handleDelete={handleDelete} />} />
       </Routes>
     </div>
