@@ -35,11 +35,10 @@ function App() {
     setProducts(Products)
   }
 
-  function handleDelete(productId) {
+  const handleDelete = (productId) => {
     const updatedProducts = products.filter((product) => product.id !== productId);
     setProducts(updatedProducts);
   }
-
 
   return (
     <div className='App'>
