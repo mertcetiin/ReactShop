@@ -1,23 +1,32 @@
-import React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import DeleteIcon from '@mui/icons-material/Delete';
 import '../styles/BasketPage.css'
 
 
-function BasketPage({ products, totalItemPrice, basketClear }) {
+function BasketPage({ products, totalItemPrice, basketClear, handleDelete }) {
 
     const totalPrice = totalItemPrice(products);
 
-
     return (
         <div className='basket-div'>
-            <button onClick={basketClear}>Basket Clear</button>
+            <button className='basketClear-btn' onClick={basketClear}>Basket Clear</button>
             {products.some(item => item.count > 0) ? (
                 <div>
                     {products.map((item) => (
                         <div key={item.id}>
-                            <h2>{item.count > 0 ? `${item.name} - ${item.count}` : ''}</h2>
+                            {item.count > 0 ? (
+                                <div>
+                                    <h2>{`${item.name} - ${item.count}`}
+                                        <button onClick={() => handleDelete(item.id)} className='deleteIcon-btn'><DeleteIcon /></button>
+                                    </h2>
+                                </div>
+                            ) : (
+                                ''
+                            )}
                         </div>
+
                     ))}
                     <p>Toplam Tutar: {totalPrice.toLocaleString('tr-TR')} TL</p>
                 </div>

@@ -16,6 +16,7 @@
 h2 {
     font-size: 25px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 30px;
 }
 
 .basket-p {
@@ -37,4 +38,18 @@ h2 {
 
 .basket-link:hover {
     background-color: #0056b3;
+}
+
+.basketClear-btn {
+    margin-left: 250px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 5px;
+}
+
+.deleteIcon-btn {
+    border: none;
+    float: right;
+    background: none;
+    margin-left: 90px;
 }

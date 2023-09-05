@@ -35,13 +35,19 @@ function App() {
     setProducts(Products)
   }
 
+  function handleDelete(productId) {
+    const updatedProducts = products.filter((product) => product.id !== productId);
+    setProducts(updatedProducts);
+  }
+
+
   return (
     <div className='App'>
       <Routes>
         <Route path='' element={<HomePage handleCount={handleCount} totalItemCount={totalItemCount} />} />
         <Route path='/login' element={<Login />} />
         <Route path='/createaccont' element={<CreateAccont />} />
-        <Route path='/mybasket' element={<BasketPage products={products} count={count} totalItemPrice={totalItemPrice} basketClear={basketClear} />} />
+        <Route path='/mybasket' element={<BasketPage products={products} count={count} totalItemPrice={totalItemPrice} basketClear={basketClear} handleDelete={handleDelete} />} />
       </Routes>
     </div>
   )
