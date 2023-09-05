@@ -39,6 +39,12 @@ function HomePage({ totalItemCount, handleCount }) {
 
     const navigate = useNavigate();
 
+    const [likeItem, setLikeItem] = useState([]);
+
+    const handleLikeItem = () => {
+
+    }
+
 
     return (
         <div>
@@ -53,7 +59,10 @@ function HomePage({ totalItemCount, handleCount }) {
                     <div className='row' key={item.id}>
                         <img src={item.src} />
                         <h2>{item.name}</h2>
-                        <p>{item.price.toLocaleString('tr-TR')} TL</p>
+                        <div>
+                            <p>{item.price.toLocaleString('tr-TR')} TL</p>
+                            <button className='likeIcon-btn'><FavoriteBorderIcon /></button>
+                        </div>
                         <button onClick={() => handleCount(item.id)}>Add</button>
                     </div>
                 ))}

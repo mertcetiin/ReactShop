@@ -70,3 +70,13 @@ header button {
 .row button:hover {
     background-color: #0056b3;
 }
+
+.likeIcon {
+    margin-inline-start: auto;
+    margin-right: 20px;
+}
+
+.likeIcon-btn {
+    float: right;
+    margin-top: -40px;
+}

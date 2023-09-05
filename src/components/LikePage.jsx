@@ -3,7 +3,9 @@ import '../styles/LikePage.css'
 
 function LikePage() {
     return (
-        <div>LikePage</div>
+        <div>
+            <h2>LikePage</h2>
+        </div>
     )
 }
 
