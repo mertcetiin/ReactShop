@@ -1,8 +1,34 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Shop App
 
-Currently, two official plugins are available:
+//
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Screenshot
+
+
+
+
+## Project Link
+
+[Live Demo]()
+
+
+### Installation
+
+1. Clone this repository or download it as a ZIP:
+
+   ```bash
+   cd Desktop/ShopApp
+   git clone https://github.com/mertcetiin/ReactShop.git
+
+2. Install dependencies and start the development server:
+
+   ```bash
+   npm install
+   npm create vite@latest .
+   npm install react-router-dom
+   npm install formik --save
+   npm install yup
+   npm install react-bootstrap bootstrap
+   npm run dev
