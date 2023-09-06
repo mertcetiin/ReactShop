@@ -13,6 +13,7 @@ function LikePage({ products }) {
         <div className="container">
             {products.some(item => item.likeCount > 0) ? (
                 <div>
+                    <button onClick={() => navigate('/')} className='continue-btn'>Continue Shopping</button>
                     {products.map((item) => (
                         <div key={item.id}>
                             {item.likeCount > 0 ? (
@@ -32,7 +33,7 @@ function LikePage({ products }) {
                 </div>
             ) : (
                 <div className='likePage-div'>
-                    <p className='likePage-icon'><FavoriteIcon /> No product in your favorites</p>
+                    <p className='likePage-icon'><FavoriteIcon /> No product in your favorites.</p>
                     <button onClick={() => navigate('/')} className='start-btn'>Start Shopping</button>
                 </div>
             )}

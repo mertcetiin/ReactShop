@@ -60,3 +60,16 @@
     transition: background-color 0.3s ease;
     border: none;
 }
+
+.continue-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+}
