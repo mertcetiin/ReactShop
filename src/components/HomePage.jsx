@@ -13,7 +13,7 @@ import '../styles/Form.css'
 import '../styles/LikePage.css'
 
 
-function HomePage({ totalItemCount, handleCount }) {
+function HomePage({ totalItemCount, handleCount, handleLikeItem }) {
 
     const onSubmit = async (values, actions) => {
         await new Promise((resolve) => {
@@ -39,12 +39,6 @@ function HomePage({ totalItemCount, handleCount }) {
 
     const navigate = useNavigate();
 
-    const [likeItem, setLikeItem] = useState([]);
-
-    const handleLikeItem = () => {
-
-    }
-
 
     return (
         <div>
@@ -61,7 +55,7 @@ function HomePage({ totalItemCount, handleCount }) {
                         <h2>{item.name}</h2>
                         <div>
                             <p>{item.price.toLocaleString('tr-TR')} TL</p>
-                            <button className='likeIcon-btn'><FavoriteBorderIcon /></button>
+                            <button onClick={() => handleLikeItem(item.id)} className='likeIcon-btn'><FavoriteBorderIcon /></button>
                         </div>
                         <button onClick={() => handleCount(item.id)}>Add</button>
                     </div>
