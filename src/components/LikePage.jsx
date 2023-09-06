@@ -1,8 +1,14 @@
 import React from 'react'
 import '../styles/LikePage.css'
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useNavigate } from 'react-router-dom';
+import '../styles/LikePage.css'
+
 
 function LikePage({ products }) {
+
+    const navigate = useNavigate();
+
     return (
         <div className="container">
             {products.some(item => item.likeCount > 0) ? (
@@ -25,7 +31,10 @@ function LikePage({ products }) {
                     ))}
                 </div>
             ) : (
-                <p> You have no items in your basket!</p>
+                <div className='likePage-div'>
+                    <p className='likePage-icon'><FavoriteIcon /> No product in your favorites</p>
+                    <button onClick={() => navigate('/')} className='start-btn'>Start Shopping</button>
+                </div>
             )}
         </div>
     )
