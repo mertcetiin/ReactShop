@@ -2,7 +2,7 @@
 
 # Shop App
 
-//
+This project includes a simple shopping cart implementation using React. Users can pack different products, view their carts, clean their carts and add their products to their favourites.
 
 ## Project Screenshot
 
