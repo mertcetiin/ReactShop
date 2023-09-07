@@ -13,6 +13,7 @@ function App() {
   const [products, setProducts] = useState(Products);
   const [count, setCount] = useState(0);
 
+
   const handleCount = (productId) => {
     const updatedProducts = products.map((product) =>
       product.id === productId
@@ -37,7 +38,12 @@ function App() {
   }
 
   const handleDelete = (productId) => {
-    const updatedProducts = products.filter((product) => product.id !== productId);
+    const updatedProducts = products.map((product) => {
+      if (product.id === productId) {
+        return { ...product, count: 0 };
+      }
+      return product
+    });
     setProducts(updatedProducts);
   }
 
@@ -52,14 +58,13 @@ function App() {
     setProducts(updatedProducts)
   }
 
-
   return (
     <div className='App'>
       <Routes>
         <Route path='' element={<HomePage handleLikeItem={handleLikeItem} handleCount={handleCount} totalItemCount={totalItemCount} />} />
         <Route path='/login' element={<Login />} />
         <Route path='/createaccont' element={<CreateAccont />} />
-        <Route path='like' element={<LikePage count={count} products={products} handleLikeItem={handleLikeItem} />} />
+        <Route path='like' element={<LikePage products={products} handleLikeItem={handleLikeItem} />} />
         <Route path='/mybasket' element={<BasketPage products={products} count={count} totalItemPrice={totalItemPrice} basketClear={basketClear} handleDelete={handleDelete} />} />
       </Routes>
     </div>

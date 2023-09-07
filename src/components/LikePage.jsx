@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/LikePage.css'
 
 
-function LikePage({ products }) {
+function LikePage({ products, handleLikeDelete }) {
 
     const navigate = useNavigate();
 
@@ -22,7 +22,7 @@ function LikePage({ products }) {
                                     <h2>{item.name}</h2>
                                     <div>
                                         <p>{item.price.toLocaleString('tr-TR')} TL</p>
-                                        <button className='likeIcon-btn'><FavoriteIcon /></button>
+                                        <button onClick={() => handleLikeDelete(item.id)} className='likeIcon-btn'><FavoriteIcon /></button>
                                     </div>
                                 </div>
                             ) : (
