@@ -10,26 +10,28 @@ function LikePage({ products, handleDeleteLike }) {
     const navigate = useNavigate();
 
     return (
-        <div className="container">
+        <div>
             {products.some(item => item.likeCount > 0) ? (
                 <div>
                     <button onClick={() => navigate('/')} className='continue-btn'>Continue Shopping</button>
-                    {products.map((item) => (
-                        <div key={item.id}>
-                            {item.likeCount > 0 ? (
-                                <div className='row' >
-                                    <img src={item.src} />
-                                    <h2>{item.name}</h2>
-                                    <div>
-                                        <p>{item.price.toLocaleString('tr-TR')} TL</p>
-                                        <button onClick={() => handleDeleteLike(item.id)} className='likeIcon-btn'><FavoriteIcon /></button>
+                    <div className="container">
+                        {products.map((item) => (
+                            <div key={item.id}>
+                                {item.likeCount > 0 ? (
+                                    <div className='row' >
+                                        <img src={item.src} />
+                                        <h2>{item.name}</h2>
+                                        <div>
+                                            <p>{item.price.toLocaleString('tr-TR')} TL</p>
+                                            <button onClick={() => handleDeleteLike(item.id)} className='likeIcon-btn'><FavoriteIcon /></button>
+                                        </div>
                                     </div>
-                                </div>
-                            ) : (
-                                ''
-                            )}
-                        </div>
-                    ))}
+                                ) : (
+                                    ''
+                                )}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             ) : (
                 <div className='likePage-div'>
