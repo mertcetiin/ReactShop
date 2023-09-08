@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import DeleteIcon from '@mui/icons-material/Delete';
+import ClearIcon from '@mui/icons-material/Clear';
 import '../styles/BasketPage.css'
 
 
@@ -10,7 +11,7 @@ function BasketPage({ products, totalItemPrice, basketClear, handleDelete }) {
 
     return (
         <div className='basket-div'>
-            <button className='basketClear-btn' onClick={basketClear}>Basket Clear</button>
+            <button className='basketClear-btn' onClick={basketClear}><ClearIcon /></button>
             {products.some(item => item.count > 0) ? (
                 <div>
                     {products.map((item) => (
