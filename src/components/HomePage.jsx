@@ -43,9 +43,11 @@ function HomePage({ totalItemCount, handleCount, handleLikeItem }) {
     return (
         <div>
             <header>
-                <button onClick={handleLogin}><LoginIcon />  Login</button>
+                <button className='LoginDiv' onClick={handleLogin}><LoginIcon />  Login</button>
                 <button onClick={() => navigate('/like')} className='likeIcon'><FavoriteBorderIcon /></button>
-                <button onClick={() => navigate('/mybasket')}><ShoppingCartIcon /> {totalItemCount}</button>
+                <div className='counter-div'>
+                    <button onClick={() => navigate('/mybasket')}><ShoppingCartIcon /> {totalItemCount}</button>
+                </div>
             </header>
 
             <div className="container">

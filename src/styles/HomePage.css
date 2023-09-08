@@ -2,7 +2,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #007bff;
+    background-color: #4F5D68;
     padding: 10px 20px;
     color: #fff;
 }
@@ -74,9 +74,24 @@ header button {
 .likeIcon {
     margin-inline-start: auto;
     margin-right: 20px;
+    background-color: black;
+    padding: 8px;
+    border-radius: 50%;
 }
 
 .likeIcon-btn {
     float: right;
     margin-top: -40px;
+}
+
+.counter-div {
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.LoginDiv {
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
 }
