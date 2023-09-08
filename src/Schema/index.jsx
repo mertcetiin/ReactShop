@@ -4,30 +4,32 @@ const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
 export const loginSchema = yup.object().shape({
     email: yup
         .string()
-        .email('Geçerli bir email giriniz')
-        .required('Email girmek zorunludur'),
+        .email('Please enter a valid email')
+        .required('Email is required'),
     password: yup
         .string()
-        .min(5, 'Lütfen min 5 karakter giriniz')
+        .min(5, 'Please enter at least 5 characters')
         .matches(passwordRules, {
-            message: 'Lütfen en az 1 nüyük harf 1 küçük harf ve 1 sayı giriniz',
-        }).required('Şifre girmek zorunludur'),
+            message: 'Please enter at least 1 uppercase letter, 1 lowercase letter and 1 number',
+        })
+        .required('password is required'),
 });
 
 
 export const createSchema = yup.object().shape({
     email: yup
         .string()
-        .email('Geçerli bir email giriniz')
-        .required('Email girmek zorunludur'),
+        .email('Please enter a valid email')
+        .required('Email is required'),
     password: yup
         .string()
-        .min(5, 'Lütfen min 5 karakter giriniz')
+        .min(5, 'Please enter at least 5 characters')
         .matches(passwordRules, {
-            message: 'Lütfen en az 1 nüyük harf 1 küçük harf ve 1 sayı giriniz',
-        }).required('Şifre girmek zorunludur'),
+            message: 'Please enter at least 1 uppercase letter, 1 lowercase letter and 1 number',
+        })
+        .required('password is required'),
     confirmPassword: yup
         .string()
-        .oneOf([yup.ref('password')], 'Şifreler eşleşmiyor')
-        .required('Tekrar şifre girmek zorunludur'),
-});
+        .oneOf([yup.ref('password')], 'Passwords do not match')
+        .required('Re-entering the password is required'),
+})
